@@ -51,5 +51,13 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+
+echo "### Removing working container"
+buildah rm working-container
+if [ $? -ne 0 ]; then
+  echo "Error removing working container"
+  exit 1
+fi
+
 echo "### Build debian from scratch completed successfully!"
 exit 0
